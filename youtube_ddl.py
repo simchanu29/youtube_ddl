@@ -6,13 +6,13 @@ import argparse
 import sys
 from tqdm import tqdm
 
-def ddl_video(address, path_out):
+def ddl_video(address, path_out="."):
     tqdm.write(f" ---> Downloading video at {address}")
 
+    # Stream object creation
     try: 
-        # object creation using YouTube
-        # which was imported in the beginning 
-        yt = YouTube(address, on_progress_callback=on_progress)
+        # yt = YouTube(address, on_progress_callback=on_progress)
+        yt = YouTube(address)
     except Exception as e: 
         print("Connection Error") #to handle exception 
         print(e)
@@ -22,11 +22,10 @@ def ddl_video(address, path_out):
     # filter and get streams
     filtered_streams = yt.streams.filter(adaptive=True, file_extension='mp4').order_by('resolution').desc()
     # tqdm.write(filtered_streams)
-
     video = filtered_streams.first()
-    tqdm.write(f" > Downloading {video.title}")
 
     # downloading the video 
+    tqdm.write(f" > Downloading {video.title}")
     try: 
         video.download(path_out)
     except Exception as e: 
