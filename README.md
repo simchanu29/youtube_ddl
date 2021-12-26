@@ -1,4 +1,4 @@
-# utilitaire de récupération de video youtube
+# Utilitaire de récupération de video youtube
 
 ## Usage
 Avant de lancer le script il faut installer les dépendances.
