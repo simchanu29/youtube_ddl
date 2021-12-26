@@ -1,7 +1,7 @@
-# utilitaire de récupération de video youtube
+# Utilitaire de récupération de video youtube
 
 ## Usage
-Avant de lancer le script il faut installer les dépendances.
+Avant de lancer le script il faut récupérer le script et installer les dépendances (voir installation).
 
 Pour lancer le script, 2 possibilités : 
 - Renseigner une adresse avec le flag `-a`.
@@ -15,6 +15,11 @@ Pour le lancer rapidement :
 ```
 
 ## Installation
+Pour récupérer cloner le dépôt : 
+```
+git clone https://github.com/simchanu29/youtube_ddl
+```
+
 Pour installer les dépendances utiliser pip avec la commande suivante : 
 ```
 pip install -r requirements.txt
